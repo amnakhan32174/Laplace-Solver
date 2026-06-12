@@ -1,0 +1,49 @@
+=== SERIAL ===
+Serial | N=256 epochs=1000 | Time: 0.0640716s
+Center value: 1.00126e-06
+Serial | N=512 epochs=1000 | Time: 0.257821s
+Center value: 1.18455e-28
+Serial | N=1024 epochs=2000 | Time: 3.45967s
+Center value: 1.39099e-57
+=== OPENMP ===
+OpenMP | N=256 epochs=1000 threads=1 | Time: 0.0587292s
+Center value: 1.00126e-06
+OpenMP | N=256 epochs=1000 threads=2 | Time: 0.0368062s
+Center value: 1.00126e-06
+OpenMP | N=256 epochs=1000 threads=4 | Time: 0.108573s
+Center value: 1.00126e-06
+OpenMP | N=512 epochs=1000 threads=1 | Time: 0.263258s
+Center value: 1.18455e-28
+OpenMP | N=512 epochs=1000 threads=2 | Time: 0.171085s
+Center value: 1.18455e-28
+OpenMP | N=512 epochs=1000 threads=4 | Time: 0.26315s
+Center value: 1.18455e-28
+OpenMP | N=1024 epochs=2000 threads=1 | Time: 3.42193s
+Center value: 1.39099e-57
+OpenMP | N=1024 epochs=2000 threads=2 | Time: 2.83293s
+Center value: 1.39099e-57
+OpenMP | N=1024 epochs=2000 threads=4 | Time: 2.6695s
+Center value: 1.39099e-57
+=== MPI ===
+MPI | N=256 epochs=1000 procs=1 | Time: 0.0518579s
+Center value: 1.00126e-06
+MPI | N=256 epochs=1000 procs=2 | Time: 0.0489972s
+Center value: 1.00126e-06
+MPI | N=256 epochs=1000 procs=2 | Time: 0.0458546s
+Center value: 1.00126e-06
+MPI | N=256 epochs=1000 procs=2 | Time: 0.0374279s
+Center value: 1.00126e-06
+MPI | N=256 epochs=1000 procs=4 | Time: 6.69261s
+Center value: 1.00126e-06
+MPI | N=512 epochs=1000 procs=1 | Time: 0.237627s
+Center value: 1.18455e-28
+MPI | N=512 epochs=1000 procs=2 | Time: 0.156655s
+Center value: 1.18455e-28
+MPI | N=512 epochs=1000 procs=4 | Time: 9.19378s
+Center value: 1.18455e-28
+MPI | N=1024 epochs=2000 procs=1 | Time: 3.28243s
+Center value: 1.39099e-57
+MPI | N=1024 epochs=2000 procs=2 | Time: 2.88412s
+Center value: 1.39099e-57
+MPI | N=1024 epochs=2000 procs=4 | Time: 18.821s
+Center value: 1.39099e-57

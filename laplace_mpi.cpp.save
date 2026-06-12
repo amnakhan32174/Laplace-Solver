@@ -1,0 +1,13 @@
+// --- Non-blocking halo exchange ---
+        MPI_Request reqs[4];
+        int nreqs = 0;
+
+        if (rank < size - 1) {
+            MPI_Isend(grid[local_rows].data(),     N, MPI_DOUBLE, rank+1, 0, MPI_COMM_WORLD, &reqs[nreqs++]);
+            MPI_Irecv(grid[local_rows+1].data(),   N, MPI_DOUBLE, rank+1, 1, MPI_COMM_WORLD, &reqs[nreqs++]);
+        }
+        if (rank > 0) {
+            MPI_Isend(grid[1].data(), N, MPI_DOUBLE, rank-1, 1, MPI_COMM_WORLD, &reqs[nreqs++]);
+            MPI_Irecv(grid[0].data(), N, MPI_DOUBLE, rank-1, 0, MPI_COMM_WORLD, &reqs[nreqs++]);
+        }
+        MPI_Waitall(nreqs, reqs, MPI_STATUSES_IGNORE);
